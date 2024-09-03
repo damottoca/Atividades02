@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+class ClassificacaoDeNotas {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o número de alunos: ");
+        int n = scanner.nextInt();
+        double[] notas = new double[n];
+        double soma = 0;
+        int reprovados = 0;
+
+        for (int i = 0; i < n; i++) {
+            System.out.print("Digite a nota do aluno " + (i + 1) + ": ");
+            notas[i] = scanner.nextDouble();
+            soma += notas[i];
+            if (notas[i] < 10) {
+                reprovados++;
+            }
+        }
+
+        double media = soma / n;
+        System.out.printf("Média da turma: %.1f\n", media);
+        System.out.println("Número de reprovados: " + reprovados);
+    }
+}
+
